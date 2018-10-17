@@ -1,0 +1,98 @@
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(date 1539738477473)
++++ .idea/vcs.xml	(date 1539738477473)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: src/com/company/Basic/BasicGroupOne.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/com/company/Basic/BasicGroupOne.java	(date 1539752781790)
++++ src/com/company/Basic/BasicGroupOne.java	(date 1539752781790)
+@@ -0,0 +1,52 @@
++package com.company.Basic;
++
++public  class BasicGroupOne {
++    public static class NumberPlay {
++        public static void PrintEvenNumbers(int[] intArray, int max){
++            for(int i=0;i<intArray.length;i++){
++                int oneInt = intArray[i];
++                if(Math.round((double)oneInt/2)==oneInt/2&&oneInt<max)
++                    System.out.println(oneInt);
++            }
++        }
++    }
++
++
++    public class Student {
++        private String name;
++        public String getName() {
++            return name;
++        }
++        public void setName(String name) {
++            this.name = name;
++        }
++
++        public void printName(){
++            System.out.println(name);
++        }
++    }
++
++    public class Door {
++        public String doorType;
++
++        public Door(){
++            this.doorType="Normal Door";
++        }
++
++        public void open ()
++        {
++            System.out.println("Just push to open");
++        }
++    }
++
++
++    public class HouseFrontDoor extends Door{
++        public HouseFrontDoor(){
++            this.doorType="House Front Door";
++        }
++        public void open(){
++            System.out.println("It is a " + doorType +", so firstly unlock it");
++            super.open();
++        }
++    }
++}
+Index: src/com/company/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/com/company/Main.java	(revision 2259f014a6d1b867fe67d7cd07911de461f5e804)
++++ src/com/company/Main.java	(date 1539752800110)
+@@ -1,9 +1,13 @@
++
+ package com.company;
++import com.company.Basic.BasicGroupOne;
+ 
+ public class Main {
+ 
+     public static void main(String[] args) {
+-	// write your code here
+-        System.out.println("Bloody Hell, I haven't touch Java for such a long time!");
++	   BasicGroupOne basicGroup = new BasicGroupOne();
++	   BasicGroupOne.HouseFrontDoor frontDoor=basicGroup.new HouseFrontDoor();
++        frontDoor.open();
++
+     }
+ }
