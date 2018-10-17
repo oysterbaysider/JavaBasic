@@ -1,9 +1,13 @@
+
 package com.company;
+import com.company.Basic.BasicGroupOne;
 
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-        System.out.println("Bloody Hell, I haven't touch Java for such a long time!");
+	   BasicGroupOne basicGroup = new BasicGroupOne();
+	   BasicGroupOne.HouseFrontDoor frontDoor=basicGroup.new HouseFrontDoor();
+        frontDoor.open();
+
     }
 }
